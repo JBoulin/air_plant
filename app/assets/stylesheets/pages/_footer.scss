@@ -1,26 +1,91 @@
 .footer {
-  background: #F4F4F4;
+  background: #FFF;
+  color: #000;
+  padding: 60px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  margin-bottom: 20px;
 }
-.footer-links {
+
+.footer-logo {
+  flex: 1;
+  max-width: 200px;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .google-rating {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+}
+
+.footer-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.custom-margin {
+  margin-bottom: 30px; /* Ajoute une marge en bas de chaque colonne */
+}
+
+.footer-bottom {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }
-.footer-links a {
-  color: blue;
-  opacity: 0.15;
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #000;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+  margin: 0 5px;
 }
-.footer-links a:hover {
-  opacity: 1;
+
+.social-links a {
+  color: #000;
+  margin: 0 10px;
+  font-size: 20px;
 }
-.footer .fa-heart {
-  color: #D23333;
+
+.social-links a:hover {
+  color: #555;
 }
