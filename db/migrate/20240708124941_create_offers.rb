@@ -6,6 +6,8 @@ class CreateOffers < ActiveRecord::Migration[7.1]
       t.float "price", null: false
       t.timestamps
     end
+
+    add_column :users, :offer_id, :bigint
     add_foreign_key "users", "offers"
   end
 end
