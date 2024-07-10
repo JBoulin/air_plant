@@ -12,12 +12,12 @@
       <li><a href="#" class="nav-link px-2 link-dark">LOCATION DE PLANTES</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">ENTRETIEN</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">BLOG</a></li>
-      <li><%= link_to 'ABOUT', about_path, class: 'nav-link px-2 link-dark' %></li>
+      <li><%= link_to 'À PROPOS', about_path, class: 'nav-link px-2 link-dark' %></li>
     </ul>
 
     <div class="container my-4">
       <div class="input-group">
-        <input class="form-control" type="text" name="search[query]" placeholder="Entrez votre Ville" id="search_query">
+        <input class="form-control" type="text" name="search[query]" placeholder="Entrez votre ville" id="search_query">
         <button name="button" type="submit" class="btn btn-primary d-flex align-items-center">
           <i class="fas fa-search me-2"></i>
           <span>Search</span>
@@ -29,7 +29,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Je loue", new_plant_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Mes reservations", bookings_path, class: "nav-link" %>
@@ -38,17 +38,16 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Actions", "#", class: "dropdown-item" %>
-              <%= link_to "Mes plantes", plants_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Mes plantes", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", login_path, class: "nav-link" %>
+            <%= link_to "Se connecter", login_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
