@@ -17,9 +17,17 @@
         </div>
 
         <div class="col-md-4">
-          <div class="card p-3">
+          <div class="card p-1">
 
             <div class="justify-content-between d-flex justify-content-between py-3">
+            <%= simple_form_for([@plant, @booking]) do |f| %>
+            <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } }, id: 'booking_form' %>
+            <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } }, id: 'booking_form' %>
+            <% end %>
             </div>
             <div class="justify-content-between d-flex justify-content-between py-3">
               <p><strong>Cactus</strong> (1)</p>
@@ -40,7 +48,7 @@
               <p><strong>Total</strong></p>
               <p><strong>25 €</strong></p>
             </div>
-            <a href="#" class="btn btn-primary w-100">Book</a>
+            <%= link_to "Réserver", bookings_path, class:"btn btn-primary w-100" %>
           </div>
         </div>
       </div>
