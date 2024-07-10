@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.input-group .form-control {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: none;
+  border-right: none;
+}
+
+.input-group .btn {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: rgb(12, 133, 1);
+  border: none;
+}
+
+.input-group .btn:hover {
+  background-color: rgb(21, 199, 5)
+}
+
+.input-group .btn i {
+  font-size: 18px;
+}
