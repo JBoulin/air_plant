@@ -66,10 +66,10 @@ button {
   background-color: #316f3f;
   color: #fff;
   margin-top: 20px;
-}
 
-.reservation-button:hover {
-  background-color: #3e5541;
+  &:hover {
+    background-color: #3e5541;
+  }
 }
 
 .cancel-button {
