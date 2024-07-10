@@ -1,4 +1,52 @@
   <%= render "navbar" %>
-  <%= render "banner" %>
-  <%= render "card" %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://36vine.com/wp-content/uploads/2023/12/aa83f2ab7561ac20f6a4b07ac336eaa8.webp);">
+  <div class="container">
+
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group">
+<div class="container my-4">
+    <div class="input-group">
+      <input class="form-control" type="text" name="search[query]" placeholder="Entrez votre Ville" id="search_query">
+      <button name="button" type="submit" class="btn btn-primary d-flex align-items-center">
+        <i class="fas fa-search me-2"></i>
+        <span>Search</span>
+      </button>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </button>
+  </div>
+</form>
+
+  </div>
+</div>
+
+<h2 class="text-center">Top Cities</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1524396309943-e03f5249f002?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    Paris
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.musement.com/cover/0001/44/la-bourse-in-bordeaux-the-water-mirror-by-night-jpg_header-43181.jpeg?w=1200&h=630&q=95&fit=crop)">
+    Bordeaux
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.marseille.fr/sites/default/files/styles/custom_poster_768x529/public/contenu/mairie/vue-generale-de-marseille_1920x600.jpg?itok=pMsl9Rvw)">
+    Marseille
+  </div>
+</div>
+<h2 class="text-center">Top Plants</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://m.media-amazon.com/images/I/81TJpwrDY8L._AC_UF1000,1000_QL80_.jpg)">
+    Géranium
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.ctfassets.net/b85ozb2q358o/3YnA2pLFdMDnr3rx4KdCtQ/a1bf618906fba92504876d609cd043ab/comment-entretenir-les-cactus-et-plantes-grasses-5.jpg)">
+    Cactus
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1490080410551-72586d706202?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+    Sapin
+  </div>
+</div>
+
+
   <%= render "footer" %>
