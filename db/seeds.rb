@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+cactus = Plant.new(
+  name: "Cactus",
+  description: "Une plante idéale à l'intérieur qui n'a pas besoin de beaucoup de soleil, ni d'eau. Elle se plaiera à merveille dans votre décoration et sera magnifique accompagnée de diverses espèces de plantes !",
+  price: '20'
+)
+cactus.save!
