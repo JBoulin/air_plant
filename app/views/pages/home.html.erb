@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <%= render "navbar" %>
-  <%= render "banner" %>
-  <%= render "card" %>
-  <%= render "footer" %>
-</body>
-</html>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://36vine.com/wp-content/uploads/2023/12/aa83f2ab7561ac20f6a4b07ac336eaa8.webp);">
+  <div class="container">
+    <h1>Louer vos plantes grace à AirPlant</h1>
+  </div>
+</div>
+
+<h2 class="text-center">Top Cities</h2>
+<div class="cards">
+  <%= link_to plants_path, class: 'card-category-link text-decoration-none' do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1524396309943-e03f5249f002?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    Paris
+  </div>
+<% end %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.musement.com/cover/0001/44/la-bourse-in-bordeaux-the-water-mirror-by-night-jpg_header-43181.jpeg?w=1200&h=630&q=95&fit=crop)">
+    Bordeaux
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.marseille.fr/sites/default/files/styles/custom_poster_768x529/public/contenu/mairie/vue-generale-de-marseille_1920x600.jpg?itok=pMsl9Rvw)">
+    Marseille
+  </div>
+</div>
+<h2 class="text-center">Top Plants</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://m.media-amazon.com/images/I/81TJpwrDY8L._AC_UF1000,1000_QL80_.jpg)">
+    Géranium
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.ctfassets.net/b85ozb2q358o/3YnA2pLFdMDnr3rx4KdCtQ/a1bf618906fba92504876d609cd043ab/comment-entretenir-les-cactus-et-plantes-grasses-5.jpg)">
+    Cactus
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1490080410551-72586d706202?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+    Sapin
+  </div>
+</div>

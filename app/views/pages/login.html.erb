@@ -4,29 +4,26 @@
       <div class="col-md-6 offset-md-3">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Log in</h4>
-            <div class="d-flex justify-content-center">
-              <%= f.button :submit, "Log In", class: "btn btn-primary" %>
-            </div>
-            <div class="mt-4 text-center">
-              <%= f.button :submit, "Log in with Facebook", class: "btn btn-outline-primary btn-block",  data: { provider: 'facebook' } %>
-              <%= f.button :submit, "Log in with Google", class: "btn btn-outline-primary btn-block", data: { provider: 'google_oauth2' } %>
+            <h4 class="card-title text-center">Log in</h4>
+            <div class="mt-4 text-center ps-3 p-3 m-3 space-between">
+              <%= f.button :submit, "Facebook", class: "btn btn-primary btn-block m-3",  data: { provider: 'facebook' } %>
+              <%= f.button :submit, "Google", class: "btn btn-primary btn-block m-3", data: { provider: 'google_oauth2' } %>
             </div>
             <div class="mt-4 text-center">
               <p class="mb-0">
-                <span class="text-muted">or</span>
+                <span class="text-muted">ou</span>
               </p>
             </div>
             <div class="mt-2">
-              <%= f.input :email, label: "Email Address", class: 'form-control' %>
-              <%= f.input :password, label: "Password", class: 'form-control' %>
+              <%= f.input :email, label: "Email Address", class: 'form-control' , placeholder: 'votre email ici' %>
+              <%= f.input :password, label: "Password", class: 'form-control', placeholder: '*********' %>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-4">
               <%= f.input :remember_me, label: "Remember me", as: :boolean, input_html: { class: 'form-check-input' } %>
               <%= link_to "Forgot password?", new_user_password_path, class: 'text-muted' %>
             </div>
             <div class="mt-4 text-center rounded">
-              <%= f.button :submit, "Log In", class: "btn btn-primary rounded" %>
+              <%= f.button :submit, "Log In", class: "btn btn-primary btn-large" %>
             </div>
             <div class="mt-4 text-center">
               <%= link_to "Don't have an account?", new_user_registration_path, class: 'text-muted' %>
