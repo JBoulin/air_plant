@@ -7,57 +7,7 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 34px;
   font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.banner a {
-  color: white;
-  background-color: darkblue;
-
-  &:hover {
-    color: white;
-    background-color: blue;
-  }
-}
-
-
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-}
-
-.container {
-  max-width: 600px;
-}
-
-.input-group .form-control {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  box-shadow: none;
-  border-right: none;
-}
-
-.input-group .btn {
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  background-color: rgb(12, 133, 1);
-  border: none;
-}
-
-.input-group .btn:hover {
-  background-color: rgb(21, 199, 5)
-}
-
-.input-group .btn i {
-  font-size: 18px;
 }
