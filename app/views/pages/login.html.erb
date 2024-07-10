@@ -6,8 +6,8 @@
           <div class="card-body">
             <h4 class="card-title text-center">Log in</h4>
             <div class="mt-4 text-center ps-3 p-3 m-3 space-between">
-              <%= f.button :submit, "Facebook", class: "btn btn-outline-primary btn-block m-3",  data: { provider: 'facebook' } %>
-              <%= f.button :submit, "Google", class: "btn btn-outline-primary btn-block m-3", data: { provider: 'google_oauth2' } %>
+              <%= f.button :submit, "Facebook", class: "btn btn-primary btn-block m-3",  data: { provider: 'facebook' } %>
+              <%= f.button :submit, "Google", class: "btn btn-primary btn-block m-3", data: { provider: 'google_oauth2' } %>
             </div>
             <div class="mt-4 text-center">
               <p class="mb-0">
@@ -23,7 +23,7 @@
               <%= link_to "Forgot password?", new_user_password_path, class: 'text-muted' %>
             </div>
             <div class="mt-4 text-center rounded">
-              <%= f.button :submit, "Log In", class: "btn btn-primary rounded" %>
+              <%= f.button :submit, "Log In", class: "btn btn-primary btn-large" %>
             </div>
             <div class="mt-4 text-center">
               <%= link_to "Don't have an account?", new_user_registration_path, class: 'text-muted' %>
