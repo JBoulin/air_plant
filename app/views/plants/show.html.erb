@@ -1,6 +1,6 @@
 <div class="mb-5 w-75 mx-auto">
 
-    <img class="rounded mt-3 mb-3 img-fluid mx-auto d-block" src="https://images.ctfassets.net/b85ozb2q358o/3YnA2pLFdMDnr3rx4KdCtQ/a1bf618906fba92504876d609cd043ab/comment-entretenir-les-cactus-et-plantes-grasses-5.jpg" alt="">
+   <%= cl_image_tag @plant.photo.key, class:"rounded mt-3 mb-3 img-fluid mx-auto d-block" %>
 
 
     <div class="">
@@ -9,7 +9,7 @@
           <div class="card card-body mb-3">
             <h2><%= @plant.name %></h2>
             <p><small><%= @plant.description %></small></p>
-            <p><small>En location par :</small></p>
+            <p><small>En location par : <%= @plant.user.username %></small></p>
           </div>
         </div>
 
