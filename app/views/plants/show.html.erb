@@ -1,23 +1,16 @@
 <div class="mb-5 w-75 mx-auto">
   <%= cl_image_tag @plant.photo.key, class: "rounded mt-3 mb-3 img-fluid mx-auto d-block" %>
 
-  <div class="">
     <div class="row">
       <div class="col-8">
         <div class="card card-body mb-3">
           <h2><%= @plant.name %></h2>
           <p><small><%= @plant.description %></small></p>
           <p><small>En location par : <%= @plant.user.username %></small></p>
-          <div class="d-flex gap-3 p-2">
-            <% if user_signed_in? && @plant.user == current_user %>
-              <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
-              <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-            <% end %>
-          </div>
         </div>
       </div>
 
-          <div class="border p-3 rounded" data-controller="booking" data-booking-price-value="<%= @plant.price %>">
+          <div class="border p-3 rounded col-4" data-controller="booking" data-booking-price-value="<%= @plant.price %>">
             <p class='fw-bold fs-3'><%= @plant.price %>€ <small class='fw-light'>jour</small></p>
             <%= simple_form_for([@plant, @booking]) do |f| %>
               <div class="d-flex flex-column">
@@ -33,6 +26,3 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>

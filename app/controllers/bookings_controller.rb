@@ -13,6 +13,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.plant = @plant
     @booking.user = current_user
+    @diff_in_days = @booking.end_date - @booking.start_date
+    @total_price = ((@diff_in_days * @plant.price) + 7)
+    @booking.total_price = @total_price
 
     if @booking.save!
       redirect_to bookings_path, notice: "Votre plante est réservée !"
