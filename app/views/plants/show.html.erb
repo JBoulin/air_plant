@@ -1,6 +1,35 @@
 <div class="mb-5 w-75 mx-auto">
+  <%= cl_image_tag @plant.photo.key, class: "rounded mt-3 mb-3 img-fluid mx-auto d-block" %>
 
-   <%= cl_image_tag @plant.photo.key, class:"rounded mt-3 mb-3 img-fluid mx-auto d-block" %>
+  <div class="">
+    <div class="row">
+      <div class="col-8">
+        <div class="card card-body mb-3">
+          <h2><%= @plant.name %></h2>
+          <p><small><%= @plant.description %></small></p>
+          <p><small>En location par : <%= @plant.user.username %></small></p>
+
+          <% if user_signed_in? && @plant.user == current_user %>
+            <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
+            <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="card p-3">
+          <div class="py-3 row">
+            <%= simple_form_for([@plant, @booking]) do |f| %>
+              <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }, id: 'booking_form' %>
+              <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } }, id: 'booking_form' %>
+            <% end %>
+          </div>
+
+          <div class="justify-content-between d-flex justify-content-between py-3">
+            <p><strong>Cactus</strong> (1)</p>
+            <p>20 €</p>
+          </div>
+
 
     <div class="">
       <div class="row ">
@@ -10,7 +39,7 @@
             <p><small><%= @plant.description %></small></p>
             <p><small>En location par : <%= @plant.user.username %></small></p>
           </div>
-        </div>
+
 
         <div class="col-4">
           <div class="">
@@ -30,7 +59,7 @@
 
               </div>
             </div>
+
           </div>
-        </div>
   </div>
 </div>
