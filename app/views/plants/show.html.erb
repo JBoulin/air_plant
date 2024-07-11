@@ -8,11 +8,12 @@
           <h2><%= @plant.name %></h2>
           <p><small><%= @plant.description %></small></p>
           <p><small>En location par : <%= @plant.user.username %></small></p>
-
-          <% if user_signed_in? && @plant.user == current_user %>
-            <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
-            <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-          <% end %>
+          <div class="d-flex gap-3 p-2">
+            <% if user_signed_in? && @plant.user == current_user %>
+              <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
+              <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
+          </div>
         </div>
       </div>
 
