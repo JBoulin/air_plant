@@ -36,7 +36,7 @@ class PlantsController < ApplicationController
 
   def destroy
     @plant.destroy
-    redirect_to plants_path, notice: 'Plant was successfully deleted.'
+    redirect_to plants_path, notice: 'Votre plante a été supprimée'
   end
 
   def book
