@@ -15,9 +15,9 @@
       <div class="col-md-3 mb-4">
         <h5>Végétalisez</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-dark">Je loue</a></li>
+          <li><%= link_to "Je loue", new_plant_path, class: "nav-link text-decoration-none text-dark" %></li>
           <li><a href="#" class="text-decoration-none text-dark">Entretien</a></li>
-          <li><a href="#" class="text-decoration-none text-dark">À propos</a></li>
+          <li><%= link_to 'À propos', about_path, class: 'nav-link text-decoration-none text-dark' %></li>
           <li><a href="#" class="text-decoration-none text-dark">Location de plantes</a></li>
         </ul>
       </div>
@@ -33,7 +33,7 @@
       <div class="col-md-3 mb-4">
         <h5>Contactez-nous</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-dark">Paris</a></li>
+          <li><%= link_to 'Paris', plants_path, class: 'nav-link text-decoration-none text-dark' %></li>
           <li><a href="#" class="text-decoration-none text-dark">Bordeaux</a></li>
           <li><a href="#" class="text-decoration-none text-dark">Marseille</a></li>
         </ul>
