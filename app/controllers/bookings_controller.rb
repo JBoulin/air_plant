@@ -9,13 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @plant = Plant.find(params[:plant_id])
     @booking = Booking.new(booking_params)
     @booking.plant = @plant
+    @booking.user = current_user
 
-    if @booking.save
+    if @booking.save!
       redirect_to bookings_path, notice: "Votre plante est réservée !"
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
