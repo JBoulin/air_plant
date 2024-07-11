@@ -8,29 +8,31 @@
           <h2><%= @plant.name %></h2>
           <p><small><%= @plant.description %></small></p>
           <p><small>En location par : <%= @plant.user.username %></small></p>
-
-          <% if user_signed_in? && @plant.user == current_user %>
-            <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
-            <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-          <% end %>
+          <div class="d-flex gap-3 p-2">
+            <% if user_signed_in? && @plant.user == current_user %>
+              <%= link_to 'Modifié', edit_plant_path(@plant), class: 'btn btn-secondary' %>
+              <%= link_to 'Supprimer', plant_path(@plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
+          </div>
         </div>
       </div>
 
-        <div class="col-4">
-              <div data-controller="booking" data-booking-price-value="<%= @plant.price %>" class="border p-3 rounded">
-                  <p class='fw-bold fs-3'><%= @plant.price %>€ <small class='fw-light'>jour</small></p>
-                  <%= simple_form_for([@plant, @booking]) do |f| %>
-                      <div class="d-flex flex-column">
-                        <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "start_date" } }, id: 'booking_form'%>
-                        <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "end_date" } }, id: 'booking_form'%>
-                        <p data-booking-target='info'></p>
-                        <p><strong>Frais de réservation: 2 €</strong></p>
-                        <p><strong>Entretien: 5 €</strong></p>
-                        <p class='fw-bold' data-booking-target='total_price'></p>
-                        <%= f.submit 'Réserver', class: 'btn btn-primary w-100' %>
-                      </div>
-                   <% end %>
-                </div>
+          <div class="border p-3 rounded" data-controller="booking" data-booking-price-value="<%= @plant.price %>">
+            <p class='fw-bold fs-3'><%= @plant.price %>€ <small class='fw-light'>jour</small></p>
+            <%= simple_form_for([@plant, @booking]) do |f| %>
+              <div class="d-flex flex-column">
+                <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "start_date" } }, id: 'booking_form' %>
+                <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "end_date" } }, id: 'booking_form' %>
+                <p data-booking-target='info'></p>
+                <p><strong>Frais de réservation: 2 €</strong></p>
+                <p><strong>Entretien: 5 €</strong></p>
+                <p class='fw-bold' data-booking-target='total_price'></p>
+                <%= f.submit 'Réserver', class: 'btn btn-primary w-100' %>
+              </div>
+            <% end %>
           </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
