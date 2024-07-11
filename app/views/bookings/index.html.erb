@@ -2,7 +2,7 @@
             <div class="reservation-header">Mes Réservations</div>
             <% @bookings.each do | booking | %>
             <div class="reservation-card">
-                <img src="https://www.jardiner-malin.fr/wp-content/uploads/2021/12/Cactophile-cactus-succulente.jpg" alt="Cactus">
+                <%= cl_image_tag booking.plant.photo.key %>
                 <div class="reservation-details">
                     <h3 class="reservation-title"><%= booking.plant.name %></h3>
                     <p>Date: <%= booking.created_at %> </p>
