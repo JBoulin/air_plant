@@ -5,7 +5,7 @@
                 <img src="https://www.jardiner-malin.fr/wp-content/uploads/2021/12/Cactophile-cactus-succulente.jpg" alt="Cactus">
                 <div class="reservation-details">
                     <h3 class="reservation-title"><%= booking.plant.name %></h3>
-                    <p>Date: <%= Date.today %> </p>
+                    <p>Date: <%= booking.created_at %> </p>
                     <p>Louer du : <%= booking.start_date %> au <%= booking.end_date %></p>
                     <p>Total : <%= booking.total_price %> €</p>
                     <p>Statut: En attente</p>

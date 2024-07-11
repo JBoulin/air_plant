@@ -17,10 +17,7 @@ export default class extends Controller {
         new Date(this.start_dateTarget.value);
       const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
         this.infoTarget.innerText = `${pricePerDay}€ x ${diffInDays} jours(s)`;
-        this.total_priceTarget.innerHTML = `<span>€${(
-          diffInDays * pricePerDay + 7
-        ).toLocaleString()}</span> <small class='fw-light'>total</small> `;
+        this.total_priceTarget.innerHTML = `Total : ${(diffInDays * pricePerDay + 7)}€`;
+      }
     }
   }
-
-}
