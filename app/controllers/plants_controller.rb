@@ -7,6 +7,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -36,6 +37,6 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :price, photos: [])
+    params.require(:plant).permit(:name, :description, :price, :photo)
   end
 end

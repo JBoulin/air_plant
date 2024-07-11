@@ -85,8 +85,8 @@
   color: #000;
   margin: 0 10px;
   font-size: 20px;
-}
 
-.social-links a:hover {
-  color: #555;
+  &:hover {
+    color: #555;
+  }
 }
