@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     resources :bookings, except: [:new] do
       resources :reviews, only: [:create]
     end
-    resources :bookings, only: [:index, :update, :destroy]
   end
+
+  resources :bookings, only: [:index, :update, :destroy]
 
   delete '/bookings/:id', to: 'bookings#destroy', as: 'delete_booking'
   get 'mes_bookings', to: 'bookings#my_bookings'
