@@ -8,39 +8,53 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
-      <li><%= link_to 'À propos', about_path, class: 'nav-link px-2 link-dark' %></li>
-    </ul>
-
-    <div class="container my-4">
-      <div class="input-group">
-        <input class="form-control" type="text" name="search[query]" placeholder="Entrez votre ville" id="search_query">
-        <button name="button" type="submit" class="btn btn-primary d-flex align-items-center">
-          <i class="fas fa-search me-2"></i>
-          <span>Search</span>
-        </button>
-      </div>
-    </div>
+      <form class="d-flex position-absolute search-center">
+        <div class="input-group">
+          <input class="form-control" type="search" name="search[query]" placeholder="Entrez votre ville" id="search_query" aria-label="Search">
+          <button name="button" type="submit" class="btn btn-primary d-flex align-items-center">
+            <i class="fas fa-search me-2"></i>
+            <span>Search</span>
+          </button>
+        </div>
+      </form>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Je loue", new_plant_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mes reservations", bookings_path, class: "nav-link" %>
+            <%= link_to "Mes réservations", bookings_path, class: "nav-link" %>
           </li>
-
+          <li class="nav-item">
+            <a href="#" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'À propos', about_path, class: 'nav-link' %>
+          </li>
           <li class="nav-item dropdown">
+
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="navbarDropdown">
+              <%= link_to "Mes plantes", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Profil", edit_user_registration_path, class: "dropdown-item" %>
+
+            <%= image_tag "https://www.palasa.co.in/cdn/shop/articles/15_Top_Indoor_Plants_That_are_Perfect_for_Small_Spaces.jpg?v=1694781533&width=360", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mes plantes", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Editer le profil ", bookings_path, class: "dropdown-item" %>
+
               <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 link-dark">Blog</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'À propos', about_path, class: 'nav-link px-2 link-dark' %>
+          </li>
           <li class="nav-item">
             <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link" %>
           </li>
@@ -49,6 +63,7 @@
           </li>
         <% end %>
       </ul>
+
     </div>
   </div>
 </div>
