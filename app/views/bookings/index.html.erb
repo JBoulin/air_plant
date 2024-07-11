@@ -1,5 +1,20 @@
 <div class="reservation-container">
             <div class="reservation-header">Mes Réservations</div>
+            <% @bookings.each do | booking | %>
+            <div class="reservation-card">
+                <img src="https://www.jardiner-malin.fr/wp-content/uploads/2021/12/Cactophile-cactus-succulente.jpg" alt="Cactus">
+                <div class="reservation-details">
+                    <h3 class="reservation-title"><%= booking.plant.name %></h3>
+                    <p>Date: <%= Date.today %> </p>
+                    <p>Louer du : <%= booking.start_date %> au <%= booking.end_date %></p>
+                    <p>Total : <%= booking.total_price %> €</p>
+                    <p>Statut: En attente</p>
+                    <button class="reservation-button">Voir les détails</button>
+                    <button class="cancel-button">Annuler</button>
+                </div>
+            </div>
+
+
 
             <div class="reservation-card">
                 <img src="https://www.jardiner-malin.fr/wp-content/uploads/2021/12/Cactophile-cactus-succulente.jpg" alt="Cactus">

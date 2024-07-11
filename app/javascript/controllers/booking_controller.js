@@ -20,8 +20,6 @@ export default class extends Controller {
         this.total_priceTarget.innerHTML = `<span>€${(
           diffInDays * pricePerDay + 7
         ).toLocaleString()}</span> <small class='fw-light'>total</small> `;
-        console.log(this)
-        console.log(diffInDays)
     }
   }
 
