@@ -28,3 +28,8 @@ body {
 .input-group .btn i {
   font-size: 18px;
 }
+
+.search-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
