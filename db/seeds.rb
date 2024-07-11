@@ -8,11 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Plant.destroy_all
 User.destroy_all
+
 
 john_doe = User.create!(
   email: "john@test.com",
   password: "123456",
+  username: "johndoe"
 )
 
 cactus = Plant.new(
