@@ -1,12 +1,12 @@
 class PlantsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
     @plants = Plant.all
   end
 
   def show
-    @plant = Plant.find(params[:id])
     @booking = Booking.new
   end
 
@@ -23,8 +23,23 @@ class PlantsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @plant.update(plant_params)
+      redirect_to @plant, notice: 'Plant was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @plant.destroy
+    redirect_to plants_url, notice: 'Plant was successfully deleted.'
+  end
+
   def book
-    @plant = Plant.find(params[:id])
     @reservation = @plant.reservations.build(user: current_user)
     if @reservation.save
       ReservationMailer.with(user: current_user, plant: @plant).booking_email.deliver_later
@@ -35,6 +50,10 @@ class PlantsController < ApplicationController
   end
 
   private
+
+  def set_plant
+    @plant = Plant.find(params[:id])
+  end
 
   def plant_params
     params.require(:plant).permit(:name, :description, :price, :photo)

@@ -1,0 +1,15 @@
+<div class="w-50 mx-auto mb-5">
+  <h1 class="text-center mt-3">Modifiez votre annonce</h1>
+  <%= simple_form_for(@plant, url: plant_path(@plant), method: :patch) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name, label: "Nom de la plante" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :price, label: "Votre prix pour une journée" %>
+      <%= f.input :photo, as: :file, label: "Photo" %>
+    </div>
+
+    <div class="form-actions d-flex justify-content-center">
+      <%= f.button :submit, "Modifier", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
