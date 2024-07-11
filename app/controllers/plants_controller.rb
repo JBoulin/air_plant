@@ -17,7 +17,7 @@ class PlantsController < ApplicationController
   def create
     @plant = current_user.plants.build(plant_params)
     if @plant.save
-      redirect_to @plant, notice: 'Plant was successfully created.'
+      redirect_to mes_plantes_plants_path, notice: 'Plante ajoutée à la location !'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class PlantsController < ApplicationController
 
   def update
     if @plant.update(plant_params)
-      redirect_to @plant, notice: 'Plant was successfully updated.'
+      redirect_to mes_plantes_plants_path, notice: 'Votre plante a été modifiée'
     else
       render :edit
     end
@@ -47,6 +47,10 @@ class PlantsController < ApplicationController
     else
       redirect_to @plant, alert: 'Could not book the plant.'
     end
+  end
+
+  def mes_plantes
+    @plants = Plant.where(user: current_user)
   end
 
   private
