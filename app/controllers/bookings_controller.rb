@@ -24,6 +24,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+
+    if @booking.destroy
+      redirect_to delete_booking_path, notice: "La réservation a été annulée avec succès."
+    else
+      redirect_to bookings_path, alert: "Erreur lors de l'annulation de la réservation."
+    end
+  end
   private
 
   def booking_params

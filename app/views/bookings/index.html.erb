@@ -9,9 +9,8 @@
                     <p>Loué du : <%= booking.start_date %> au <%= booking.end_date %></p>
                     <p>En location par : <%= booking.plant.user.username %>
                     <p>Total : <%= booking.total_price %> €</p>
-                    <button class="btn btn-danger text-white">Annuler / Archiver</button>
+                    <%= link_to "Annuler", booking_path(booking.plant, booking), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler cette réservation ?" }, class: "btn btn-danger text-white" %>
                 </div>
             </div>
             <% end %>
         </div>
-
