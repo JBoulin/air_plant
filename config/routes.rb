@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :plants do
-    # resources :photos, only: [:create, :destroy]
+    collection do
+      get 'mes-plantes'
+    end
     resources :bookings, except: [:new] do
       resources :reviews, only: [:create]
     end
