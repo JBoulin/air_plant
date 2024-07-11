@@ -34,9 +34,10 @@
             <%= link_to 'À propos', about_path, class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://www.palasa.co.in/cdn/shop/articles/15_Top_Indoor_Plants_That_are_Perfect_for_Small_Spaces.jpg?v=1694781533&width=360", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mes plantes", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Editer le profil ", bookings_path, class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
