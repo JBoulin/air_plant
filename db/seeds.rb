@@ -28,3 +28,69 @@ cactus = Plant.new(
 )
 cactus.photo.attach(io: file, filename: "cactus.jpg", content_type: "image/jpg")
 cactus.save!
+
+grace_burgess = User.create!(
+  email: "grace@test.com",
+  password: "password12",
+  username: "graceburgess"
+)
+
+file_cactus1 = URI.open("https://www.artplants.fr/media/catalog/product/cache/b940d19a38559eb8d9b0e195e9107a20/2/5/25023-nr-1.jpg")
+cactus1 = Plant.new(
+  name: "Cactus Echeveria NADIA",
+  description: "Le echeveria NADIA de couleur vert-rouge constituera une décoration élégante dans de nombreux styles de maison.",
+  price: 25,
+  user: grace_burgess
+)
+cactus1.photo.attach(io: file_cactus1, filename: "CactusEcheveriaNADIA.jpg", content_type: "image/jpg")
+cactus1.save!
+
+
+lizzie_shelby = User.create!(
+  email: "lizzie2@test.com",
+  password: "password21",
+  username: "lizzieshelby"
+)
+
+file_cactus2 = URI.open("https://images.truffaut.com/media/catalog/product/3/b/3bc1ca2e02991108.jpg?width=700&height=700&store=fr&image-type=image")
+cactus2 = Plant.create!(
+  name: "Cactus Echeveria agavoides",
+  description: "Pour illuminer votre espace extérieur, optez pour l'Echeveria agavoide. Cette plante succulente ajoutera une touche décorative à votre jardin ou terrasse. Facile à entretenir, elle s'adresse à tous, des jardiniers novices aux experts.",
+  price: 25,
+  user: lizzie_shelby
+)
+cactus2.photo.attach(io: file_cactus2, filename: "CactusEcheveriaagavoides.jpg", content_type: "image/jpg")
+
+tom_hardy = User.create!(
+  email: "tom@test.com",
+  password: "password34",
+  username: "tom_hardy"
+)
+
+file_sapin2 = URI.open("https://www.sapins-noel.fr/452-thickbox_01oslo/sapin-epicea-naturel.jpg")
+sapin2 = Plant.new(
+  name: "Sapin de Noël épicéa",
+  description: "L'épicéa est un sapin traditionnel de Noël, apprécié pour son aspect rustique et son parfum boisé. Il est souvent utilisé comme sapin de Noël naturel pour sa beauté et sa forme régulière.",
+  price: 40,
+  user: tom_hardy
+)
+sapin2.photo.attach(io: file_sapin2, filename: "SapinEpicéa.jpg", content_type: "image/jpg")
+sapin2.save!
+
+joe_cole = User.create!(
+  email: "joe@test.com",
+  password: "password35",
+  username: "joe_cole"
+)
+
+file_sapin2 = URI.open("https://www.sapins-noel.fr/430-thickbox_01oslo/sapin-nordmann-naturel.jpg")
+sapin2 = Plant.new(
+  name: "Sapin de Noël naturel Abies nordmann",
+  description: "C'est le plus apprécié comme 'sapin de Noël' grâce à la bonne tenue de ses aiguilles en intérieur. Son port pyramidal et son beau feuillage vert sombre et luisant dessus, argenté dessous feront de ce sapin le roi de la fête. Il distillera son parfum puissant évoquant l'orange dans toute la maison.",
+  price: 45,
+  user: joe_cole
+)
+sapin2.photo.attach(io: file_sapin2, filename: "SapinAbiesNordmann.jpg", content_type: "image/jpg")
+sapin2.save!
+
+puts "Seed data created successfully!"

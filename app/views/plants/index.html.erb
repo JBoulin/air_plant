@@ -1,4 +1,14 @@
  <main>
+<% if params[:query].present? %>
+    <section class="py-5 text-center plante-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521334884684-d80222895322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbnQlMjBpbnRlcmlvcnxlbnwwfDB8MHx8fDA%3D);">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-lighter text-white">Trouvez la plante idéale pour votre idée</h1>
+        <p class="lead text-white">Retrouvez toutes les plantes nécéssaires pour votre intérieur ou vos évènements. Changez en quelques heures toute la décoration pour épater vos proches et vos invités.</p>
+      </div>
+    </div>
+  </section>
+   <% else %>
   <section class="py-5 text-center plante-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1476595461800-421569e956f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
@@ -7,6 +17,7 @@
       </div>
     </div>
   </section>
+<% end %>
   <div class="main-container d-flex">
     <div class="cards mt-3">
       <% @plants.each do | plant | %>
@@ -23,8 +34,11 @@
         </div>
       <% end %>
     </div>
-
-      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNjYW5vIiwiYSI6ImNseGx3ZzR2eDAxdzUybXNiNDBoMGx4NjUifQ.eVWGXr64VQyknMtuQrKjAg'>
+<% if params[:query].present? %>
+      <img id="map" class="d-none" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNjYW5vIiwiYSI6ImNseGx3ZzR2eDAxdzUybXNiNDBoMGx4NjUifQ.eVWGXr64VQyknMtuQrKjAg'>
+<% else %>
+<img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNjYW5vIiwiYSI6ImNseGx3ZzR2eDAxdzUybXNiNDBoMGx4NjUifQ.eVWGXr64VQyknMtuQrKjAg'>
+ <% end %>
 
   </div>
 

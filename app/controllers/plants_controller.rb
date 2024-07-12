@@ -3,7 +3,11 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update]
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      @plants = Plant.search_by_name(params[:query])
+    else
+      @plants = Plant.all
+    end
   end
 
   def show
@@ -62,6 +66,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :price, :photo)
+    params.require(:plant).permit(:name, :description, :price, :photo, :query)
   end
 end
