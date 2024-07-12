@@ -1,4 +1,5 @@
 <div class="mb-5 w-75 mx-auto">
+  <%= link_to "< Retour", plants_path, class:"text-decoration-none text-black mb-3 mt-2" %>
   <%= cl_image_tag @plant.photo.key, class: "rounded mt-3 mb-3 img-fluid mx-auto d-block" %>
 
     <div class="row">
@@ -20,7 +21,7 @@
                 <p><strong>Frais de réservation: 2 €</strong></p>
                 <p><strong>Entretien: 5 €</strong></p>
                 <p class='fw-bold' data-booking-target='total_price'></p>
-                <%= f.submit 'Réserver', class: 'btn btn-primary w-100' %>
+                <%= f.submit 'Réserver', class: 'btn btn-success w-100 text-white' %>
               </div>
             <% end %>
         </div>
