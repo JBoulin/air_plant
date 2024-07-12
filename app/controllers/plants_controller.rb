@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:show, :edit, :update]
 
   def index
     @plants = Plant.all
@@ -35,8 +35,10 @@ class PlantsController < ApplicationController
   end
 
   def destroy
-    @plant.destroy
-    redirect_to plants_path, notice: 'Votre plante a été supprimée'
+    @plant = Plant.find(params[:format])
+    if @plant.destroy!
+      redirect_to mes_plantes_plants_path, notice: 'Votre plante a été supprimée'
+    end
   end
 
   def book
