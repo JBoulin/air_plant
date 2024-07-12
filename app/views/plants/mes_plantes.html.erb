@@ -1,14 +1,23 @@
 <div class="reservation-container">
-  <div class="reservation-header">Mes plantes en location</div>
-  <% @plants.each do |plant| %>
-    <div class="reservation-card">
-      <%= cl_image_tag plant.photo.key %>
+  <% if @plants.any? %>
+    <div class="reservation-header">Mes plantes en location</div>
+    <% @plants.each do |plant| %>
+      <div class="reservation-card">
+        <%= cl_image_tag plant.photo.key %>
+        <div class="reservation-details">
+          <h3 class="reservation-title"><%= plant.name %></h3>
+          <p>Description: <%= plant.description %></p>
+          <p>Prix : <%= plant.price %> €</p>
+          <%= link_to 'Modifier', edit_plant_path(plant), class: 'btn btn-success' %>
+          <%= button_to 'Supprimer', mes_plantes_plants_path(plant), method: :delete, data: { confirm: 'Voulez-vous supprimer cette plante?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="reservation-header">Mes plantes en location</div>
+    <div class="reservation-card p-5 mt-4 d-flex justify-content-center">
       <div class="reservation-details">
-        <h3 class="reservation-title"><%= plant.name %></h3>
-        <p>Description: <%= plant.description %> </p>
-        <p>Prix : <%= plant.price %> €</p>
-        <%= link_to 'Modifier', edit_plant_path(plant), class: 'btn btn-success' %>
-        <%= button_to 'Supprimer', mes_plantes_plants_path(plant), method: :delete, form: { class: 'delete-alertbox' }, class: 'btn btn-danger' %>
+        <p class="mb-0 pb-5">Aucune plante disponible pour le moment.</p>
       </div>
     </div>
   <% end %>
