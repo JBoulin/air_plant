@@ -12,10 +12,10 @@
 
           <div class="border p-3 rounded col-4" data-controller="booking" data-booking-price-value="<%= @plant.price %>">
             <p class='fw-bold fs-3'><%= @plant.price %>€ <small class='fw-light'>jour</small></p>
-            <%= simple_form_for([@plant, @booking]) do |f| %>
+            <%= simple_form_for([@plant, @booking], html: { class: 'confirmation-form' }) do |f| %>
               <div class="d-flex flex-column">
-                <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "start_date" } }, id: 'booking_form' %>
-                <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "end_date" } }, id: 'booking_form' %>
+                <%= f.input :start_date, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "start_date" } }, id: 'booking_form_start_date' %>
+                <%= f.input :end_date, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action: "change->booking#update", booking_target: "end_date" } }, id: 'booking_form_end_date' %>
                 <p data-booking-target='info'></p>
                 <p><strong>Frais de réservation: 2 €</strong></p>
                 <p><strong>Entretien: 5 €</strong></p>
@@ -23,6 +23,5 @@
                 <%= f.submit 'Réserver', class: 'btn btn-primary w-100' %>
               </div>
             <% end %>
-          </div>
         </div>
       </div>
