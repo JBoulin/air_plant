@@ -1,16 +1,20 @@
 <div class="reservation-container">
-            <div class="reservation-header">Mes Réservations</div>
-            <% @bookings.each do | booking | %>
-            <div class="reservation-card">
-                <%= cl_image_tag booking.plant.photo.key %>
-                <div class="reservation-details">
-                    <h3 class="reservation-title"><%= booking.plant.name %></h3>
-                    <p>Date: <%= booking.created_at %> </p>
-                    <p>Loué du : <%= booking.start_date %> au <%= booking.end_date %></p>
-                    <p>En location par : <%= booking.plant.user.username %>
-                    <p>Total : <%= booking.total_price %> €</p>
-                    <%= button_to 'Annuler la réservation', booking_path(booking), method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Etes-vous sur ?"} %>
-                </div>
-            </div>
-            <% end %>
+  <div class="reservation-header">Mes Réservations</div>
+  <% if @bookings.any? %>
+    <% @bookings.each do | booking | %>
+    <div class="reservation-card">
+        <%= cl_image_tag booking.plant.photo.key %>
+        <div class="reservation-details">
+            <h3 class="reservation-title"><%= booking.plant.name %></h3>
+            <p>Date: <%= booking.created_at %> </p>
+            <p>Loué du : <%= booking.start_date %> au <%= booking.end_date %></p>
+            <p>En location par : <%= booking.plant.user.username %>
+            <p>Total : <%= booking.total_price %> €</p>
+            <%= button_to 'Annuler la réservation', booking_path(booking), method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Etes-vous sur ?"} %>
         </div>
+    </div>
+    <% end %>
+  <% else %>
+    <div id= "no-reservation">Pas de réservation pour le moment</div>
+  <% end %>
+</div>
