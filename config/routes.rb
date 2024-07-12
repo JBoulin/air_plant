@@ -19,6 +19,5 @@ Rails.application.routes.draw do
 
   # Static pages
   get 'about', to: 'pages#about'
-  get 'login', to: 'pages#login'
-  get 'faq', to: 'pages#faq'
+
 end
