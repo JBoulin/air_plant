@@ -3,7 +3,7 @@
   <% if @bookings.any? %>
     <% @bookings.each do | booking | %>
     <div class="reservation-card">
-        <%= cl_image_tag booking.plant.photo.key %>
+        <%= cl_image_tag booking.plant.photo.key,style: 'max-height: 250px; object-fit: crop;' %>
         <div class="reservation-details">
             <h3 class="reservation-title"><%= booking.plant.name %></h3>
             <p>Date: <%= booking.created_at %> </p>
