@@ -24,16 +24,13 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @plant = Plant.find(params[:plant_id])
-  #   @booking = @plant.bookings.find(params[:id])
-  #   @booking.destroy
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy!
+      redirect_to bookings_path
+    end
+  end
 
-  #   respond_to do |format|
-  #     format.turbo_stream { render turbo_stream: turbo_stream.remove(@booking) }
-  #     format.html { redirect_to bookings_path, notice: 'Réservation annulée avec succès.' }
-  #   end
-  # end
   private
 
   def booking_params

@@ -8,7 +8,7 @@
                     <p>Description: <%= plant.description %> </p>
                     <p>Prix : <%= plant.price %> €</p>
                     <%= link_to 'Modifier', edit_plant_path(plant), class: 'btn btn-success' %>
-                    <%= link_to 'Supprimer', plant_path(plant), method: :delete, data: { confirm: 'Voulez-vous supprimer cette plante?' }, class: 'btn btn-danger' %>
+                    <%= button_to 'Supprimer', mes_plantes_plants_path(plant), method: :delete, data: { confirm: 'Voulez-vous supprimer cette plante?' }, class: 'btn btn-danger' %>
                 </div>
             </div>
             <% end %>

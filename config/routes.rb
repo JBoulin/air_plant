@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :update, :destroy]
 
-  delete '/bookings/:id', to: 'bookings#destroy', as: 'delete_booking'
-  get 'mes_bookings', to: 'bookings#my_bookings'
 
   # Static pages
   get 'about', to: 'pages#about'
