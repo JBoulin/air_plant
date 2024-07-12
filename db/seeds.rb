@@ -93,4 +93,14 @@ sapin2 = Plant.new(
 sapin2.photo.attach(io: file_sapin2, filename: "SapinAbiesNordmann.jpg", content_type: "image/jpg")
 sapin2.save!
 
+file_bamboo = URI.open("https://images.ctfassets.net/b85ozb2q358o/fcb35e96589acc5e56db9d9ff2956fd3ad0004d55adb9df7b56ab7f2d996c8c9/ffa8e2f2a92105f7cee21f51a4aed18b/image.png")
+bamboo = Plant.new(
+  name: "Bamboo en pot",
+  description: "Super bamboo large comme une foret, parfait pour créer de l'intimité",
+  price: 70,
+  user: joe_cole
+)
+bamboo.photo.attach(io: file_bamboo, filename: "bamboo.jpg", content_type: "image/jpg")
+bamboo.save!
+
 puts "Seed data created successfully!"
