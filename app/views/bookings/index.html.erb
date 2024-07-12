@@ -10,7 +10,7 @@
             <p>Loué du : <%= booking.start_date %> au <%= booking.end_date %></p>
             <p>En location par : <%= booking.plant.user.username %>
             <p>Total : <%= booking.total_price %> €</p>
-            <%= button_to 'Annuler la réservation', booking_path(booking), method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Etes-vous sur ?"} %>
+            <%= button_to 'Annuler la réservation', booking_path(booking), class:"sweetalert", method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Etes-vous sur ?"} %>
         </div>
     </div>
     <% end %>
